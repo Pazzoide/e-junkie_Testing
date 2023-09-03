@@ -1,0 +1,53 @@
+            README
+
+Proje Açıklaması:
+    Bu proje, e-kitap satışı yapan bir web sitesini test etmeyi amaçlamaktadır. Projenin amacı, kullanıcılara kolay ve
+hızlı bir şekilde e-kitap satın alma imkanı sunmak, ödeme işlemlerini güvenli ve sorunsuz bir şekilde gerçekleştirmek
+ve kullanıcı deneyimini iyileştirmektir.
+
+Proje Detayları:
+    Proje kapsamında, e-kitapların sepete eklenmesi, ödeme işleminin yapılması, ödemenin onaylanması ve e-kitabın
+indirilmesi gibi temel özellikler yer almaktadır.
+    Projenin ilk sprintinde, aşağıdaki user story'ler sprinte alınacak ve test edilecektir:
+        E-Kitap Ödeme İşlemi
+        Debit / Kredi Kartı ile Ödeme İşlemi
+
+User Stories:
+    E-Kitap Ödeme İşlemi: Kullanıcıların, e-kitap sepete eklendikten sonra, ödeme sayfasına yönlendirilmesini ve
+debit / kredi kartı ile ödeme yapabilmesini sağlayacaktır.
+    Debit / Kredi Kartı ile Ödeme İşlemi: Kullanıcıların, ödeme sayfasında, ödeme bilgilerini doldurduktan sonra,
+ödemeyi onaylayabilmesini sağlayacaktır.
+
+Gereksinimler:
+    Windows 10/11
+    JDK 1.8SE
+    IntelliJ IDEA
+    org.seleniumhq.selenium:selenium-java:4.11.0
+    org.slf4j:slf4j-nop:1.7.30
+    commons-io:commons-io:2.11.0
+    org.testng:testng:6.14.3
+
+Sürüm:
+    1.2.1
+
+Notlar:
+    Bu proje, e-kitap satışı yapan bir web sitesinin kullanılabilirliğini iyileştirmeyi ve kullanıcı deneyimini geliştirmeyi amaçlamaktadır.
+    Projenin başarılı bir şekilde tamamlanması halinde, e-kitap satışları artacak ve kullanıcı memnuniyeti artacaktır.
+
+Düzenlemeler
+    Projenin amacı ve hedefleri, e-kitap satışı ile ilgili olarak güncellenmiştir.
+    Projenin ilk sprintinde test edilecek user story'ler, projenin amacı ve hedefleri ile uyumlu olacak şekilde seçilmiştir.
+    Gereksinimler, projenin ilk sprintinde kullanılacak olan araçlar ve teknolojileri içerecek şekilde güncellenmiştir.
+    Sürüm, projenin ilk sprintinin tamamlanmasına yönelik olarak 1.2.1 olarak güncellenmiştir.
+    Notlar, projenin amacı ve hedefleri ile ilgili olarak güncellenmiştir.
+
+QA Lead:
+    Burhan Şengül : burhseng@gmail.com
+
+Collaborators:
+    Fatihhan Karahanlı : fatihhan.karahanli@gmail.com
+    Ramazan İnce : inceliramazan80@gmail.com
+    Zafer Cansız : zfrcnsz1@gmail.com
+    Şeyma Askerzade : 4seyma@gmail.com
+    Burcu Elaldı: burcuert.el@gmail.com
+    Engin Elaldı : engin.elaldi054@gmail.com
