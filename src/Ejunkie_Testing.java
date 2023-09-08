@@ -1,5 +1,3 @@
-package US_EJT_04;
-
 import Utility.BaseDriver;
 import Utility.Fonksiyon;
 import org.apache.commons.io.FileUtils;
@@ -11,9 +9,58 @@ import org.testng.annotations.Test;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
-public class TC_EJT_04 extends BaseDriver {
+public class Ejunkie_Testing extends BaseDriver {
+    @Test
+    public void EJT_02() {
+        driver.get("https://www.e-junkie.com/wiki/demo/paypal");
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[@class='btn'])[2]")));
+        WebElement addToCart = driver.findElement(By.xpath("(//a[@class='btn'])[2]"));
+        addToCart.click();
+
+        driver.switchTo().frame(0);
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[class='Payment-Button CC']")));
+        WebElement debitCart = driver.findElement(By.cssSelector("button[class='Payment-Button CC']"));
+        debitCart.click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[class='Pay-Button']")));
+        ScreenshotCapture();
+
+        WebElement payButton = driver.findElement(By.cssSelector("button[class='Pay-Button']"));
+        payButton.click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[id='SnackBar']")));
+        driver.switchTo().parentFrame();
+        ScreenshotCapture();
+        BekleVeKapat();
+
+    }
+
+    public void ScreenshotCapture() {
+
+        DateTimeFormatter f = DateTimeFormatter.ofPattern("dd.MM.YYYY-hh.mm.ss");
+        LocalDateTime dt = LocalDateTime.now();
+
+
+        try {
+            TakesScreenshot ts = (TakesScreenshot) driver;
+            File hafizadakiHali = ts.getScreenshotAs(OutputType.FILE);
+
+            String dosyaYolu = "src\\US_EJT_02\\ekranGoruntuleri\\" + dt.format(f) + ".png";
+            FileUtils.copyFile(hafizadakiHali, new File(dosyaYolu));
+
+        } catch (Exception ex) {
+            System.out.print("ex.getMessage() = " + ex.getMessage());
+            System.out.println("EKRAN GÖRÜNTÜSÜ ALMA HATASI");
+        }
+
+    }
+
     @Test
     public void testCreditCardPaymentAndConfirmation() throws Exception {
         driver.get("https://www.e-junkie.com/wiki/demo/paypal");
@@ -89,10 +136,11 @@ public class TC_EJT_04 extends BaseDriver {
         WebElement success = driver.findElement(By.xpath("//span[@class='green_text_margin']"));
         String msj = "Logan, your order is confirmed. Thank you!";
         takeScreenshot(driver);
-        Assert.assertTrue(success.getText().equals(msj),"Doğrulama Başarısız!");
+        Assert.assertTrue(success.getText().equals(msj), "Doğrulama Başarısız!");
 
         BekleVeKapat();
     }
+
     public static void takeScreenshot(WebDriver driver) throws Exception {
         SimpleDateFormat tarihFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
         Date date = new Date();
